@@ -1,0 +1,16 @@
+/* Variables & Functions */
+
+$colors: ( //purples
+'dark-purple': #3B284A, 'purple': #63437C, //gold
+'gold': #D0AE55, //greys
+'grey': #555555, 'light-grey': #C4C4C4, 'black': #000000, 'white': #ffffff);
+@function color($colors-name) {
+    @return map-get($colors, $colors-name)
+}
+
+;
+@mixin background {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
