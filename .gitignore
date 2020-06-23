@@ -1,0 +1,5 @@
+.DS_Store
+.vscode/
+css/style.css.map
+css/dist/style.min.css.map
+css/.DS_Store
