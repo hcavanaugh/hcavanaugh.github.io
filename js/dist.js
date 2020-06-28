@@ -139,3 +139,34 @@ function moveTouch(e) {
 //Event listeners for swipe slider function
 featuredSlider.addEventListener("touchstart", startTouch, false);
 featuredSlider.addEventListener("touchmove", moveTouch, false);
+
+
+//Mobile menu functions
+
+const mobileMenuTrigger = document.querySelector(".mobile-toggle");
+const menu = document.querySelector(".main-menu__items");
+const menuItem = document.querySelectorAll(".main-menu__link");
+
+function menuToggle() {
+    menu.classList.toggle("open");
+}
+
+function scrollAndClose(e) {
+    menu.classList.remove("open");
+
+    //Note: scroll script in place as a fallback for CSS 'scroll-behavior'
+
+    //   const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
+    //   e.preventDefault();
+    //   let anchorLink = this.getAttribute('href');
+    //   const anchor = document.querySelector(anchorLink)
+    //   const originalTop = distanceToTop(anchor);
+    //   console.log(originalTop);
+    //   window.scrollBy({ top: originalTop, behavior: 'smooth' });
+}
+
+//Event listeners for menu
+mobileMenuTrigger.addEventListener("click", menuToggle);
+for (let i = 0; i < menuItem.length; i++) {
+    menuItem[i].addEventListener("click", scrollAndClose);
+}
