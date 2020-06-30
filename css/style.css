@@ -311,6 +311,36 @@ button {
   color: #444649;
 }
 
+@-webkit-keyframes waves {
+  0% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  50% {
+    -webkit-transform: scale(4, 2);
+            transform: scale(4, 2);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+
+@keyframes waves {
+  0% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  50% {
+    -webkit-transform: scale(4, 2);
+            transform: scale(4, 2);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+
 .hero-section {
   background-color: #3B284A;
   background-size: cover;
@@ -331,11 +361,26 @@ button {
   position: relative;
   padding: 0;
   line-height: 3em;
+  overflow: hidden;
 }
 
-.hero-section svg {
+.hero-section #svgWave {
   position: absolute;
   bottom: 0;
+  max-width: 1920px;
+  z-index: 1;
+}
+
+.hero-section #svgWave .wave {
+  -webkit-animation: waves 20s ease-in-out alternate infinite;
+          animation: waves 20s ease-in-out alternate infinite;
+}
+
+.hero-section #svgWave .wave--1:hover,
+.hero-section #svgWave .wave--2:hover,
+.hero-section #svgWave .wave--3:hover,
+.hero-section #svgWave .wave--4:hover {
+  opacity: 45%;
 }
 
 .hero-section .hero-content {
@@ -343,6 +388,8 @@ button {
       -ms-flex: 1 1 100%;
           flex: 1 1 100%;
   padding: 0 20px;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .hero-section h1 {
