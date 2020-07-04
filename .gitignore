@@ -1,5 +1,12 @@
+# Ignore these files #
+######################
+
 .DS_Store
-.vscode/
+assets/.DS_Store
+css/.DS_Store
+css/sass/.DS_Store
+css/dist/.DS_Store
+/css/sass/.vscode/
 css/style.css.map
 css/dist/style.min.css.map
-css/.DS_Store
+js/.DS_Store
