@@ -209,7 +209,7 @@ hr {
 }
 
 .btn--prev::before {
-  content: url("/assets/arrow-left.png");
+  content: url("assets/arrow-left.png");
 }
 
 .btn--next {
@@ -247,7 +247,7 @@ hr {
 }
 
 .btn--next::before {
-  content: url("/assets/arrow-right.png");
+  content: url("assets/arrow-right.png");
 }
 
 button {
@@ -456,7 +456,7 @@ button {
 }
 
 .hero-section .arrow-down::before {
-  content: url("/assets/arrow-down.png");
+  content: url("assets/arrow-down.png");
 }
 
 @-webkit-keyframes pulse {

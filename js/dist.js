@@ -5,10 +5,12 @@
 //Fire for tablet and desktop sessions:
 const tb = window.matchMedia('(min-width: 768px)');
 
+//Set these variables as global objects
+const galleryThumbs = document.getElementsByClassName("project-gallery__item");
+const featuredSlider = document.querySelector(".project-featured__images");
+const featuredInfo = document.querySelector(".project-featured__info");
+
 if (tb.matches) {
-    const galleryThumbs = document.getElementsByClassName("project-gallery__item");
-    const featuredSlider = document.querySelector(".project-featured__images");
-    const featuredInfo = document.querySelector(".project-featured__info");
 
     //Change data in featured project section
     function featuredGallery(event) {
@@ -104,7 +106,7 @@ if (tb.matches) {
         }
     };
 
-    //establish slider navigation event listeners
+    //Establish slider navigation event listeners
     const slideHandlers = {
         nextSlide: function(element) {
             document.querySelector(element).addEventListener('click', nextSlide);
@@ -118,7 +120,7 @@ if (tb.matches) {
         }
     }
 
-    //establish objects for navigation function + event listener
+    //Establish objects for navigation function + event listener
     slideHandlers.nextSlide('.btn--next');
     slideHandlers.prevSlide('.btn--prev');
 
