@@ -230,12 +230,14 @@ window.addEventListener("DOMContentLoaded", function() {
     let form = document.querySelector("#contact-form");
     let button = document.querySelector("#form-submit");
     let status = document.querySelector("#form-status");
+    status.style = "display: none ";
 
     // Success and Error functions for after the form is submitted
 
     function success() {
         form.reset();
         button.style = "display: none ";
+        status.style = "display: block ";
         status.innerHTML = "Thank you for contacting me. I will be in touch with you soon.";
     }
 
@@ -267,4 +269,4 @@ function ajax(method, url, data, success, error) {
         }
     };
     xhr.send(data);
-}
+} //End Contact Form AJAX submission script

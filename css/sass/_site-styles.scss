@@ -126,7 +126,7 @@
                 transform: translateX(-50%);
             }
             &::before {
-                content: url("/../assets/arrow-down.png");
+                content: url("/assets/arrow-down.png");
             }
         }
         &--prev,
@@ -139,26 +139,29 @@
         }
         &--prev {
             transform: translateX(-130%);
-            @media screen and (min-width: 769px) and (max-width: 1200px) {
+            @media screen and (min-width: 993px) and (max-width: 1200px) {
                 transform: translateX(-70%);
             }
-            @media screen and (width: 768px) {
+            @media screen and (width: 992px) {
+                transform: translateX(470%);
+            }
+            @media screen and (max-width: 991px) {
                 transform: translateX(150%);
             }
             @media screen and (max-width: 767px) {
                 transform: translateX(0);
             }
             &::before {
-                content: url("/../assets/arrow-left.png");
+                content: url("/assets/arrow-left.png");
             }
         }
         &--next {
             left: 50%;
             transform: translateX(550%);
-            @media screen and (min-width: 769px) and (max-width: 1200px) {
+            @media screen and (min-width: 993px) and (max-width: 1200px) {
                 transform: translateX(480%);
             }
-            @media screen and (width: 768px) {
+            @media screen and (max-width: 992px) {
                 transform: translateX(690%);
             }
             @media screen and (max-width: 767px) {
@@ -168,7 +171,7 @@
                 transform: translateX(390%);
             }
             &::before {
-                content: url("/../assets/arrow-right.png");
+                content: url("/assets/arrow-right.png");
             }
         }
         &--back-top {
@@ -412,6 +415,9 @@
                 z-index: 1;
                 padding: 0 1rem;
                 opacity: 0.8;
+                @media screen and (min-width: 768px) and (max-width: 992px) {
+                    padding: 0 .5rem;
+                }
                 &.selected {
                     transform: scale(1.1);
                     z-index: 2;
@@ -426,7 +432,7 @@
                 }
                 .project-gallery__item-info {
                     display: none;
-                    @media screen and (max-width: 575px) {
+                    @media screen and (max-width: 767px) {
                         display: block;
                         padding: 2rem 20px;
                         text-align: center;
@@ -455,7 +461,12 @@
             padding: 5rem 0 3rem;
             align-items: center;
             justify-content: center;
-            @media screen and (max-width: 575px) {
+            @media screen and (max-width: 992px) {
+                .flex-col--half {
+                    flex-basis: 100%;
+                }
+            }
+            @media screen and (max-width: 767px) {
                 display: none;
             }
             &__wrap {
@@ -479,7 +490,7 @@
                 @media screen and (min-width: 769px) and (max-width: 1200px) {
                     max-width: 90%;
                 }
-                @media screen and (min-width: 576px) and (max-width: 991px) {
+                @media screen and (min-width: 576px) and (max-width: 992px) {
                     margin: 0 auto;
                 }
                 opacity: 0;
@@ -491,7 +502,7 @@
                 }
             }
             &__info {
-                @media screen and (max-width: 768px) {
+                @media screen and (max-width: 992px) {
                     text-align: center;
                     padding-top: 2rem;
                 }
