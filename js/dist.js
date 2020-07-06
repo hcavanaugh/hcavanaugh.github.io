@@ -38,7 +38,6 @@ if (tb.matches) {
             currentSlide = 0,
             slideHeight = null,
             initialHeight = featuredSlides[0].height;
-        console.log(featuredSlides[0].clientHeight);
         featuredSlider.style.height = initialHeight + 'px';
         //set first image as active in the slider
         featuredSlides[0].classList.add("active");
@@ -72,7 +71,6 @@ if (tb.matches) {
             currentSlide = 0,
             slideHeight = null,
             initialHeight = featuredSlides[0].clientHeight;
-        console.log(featuredSlides[0].clientHeight);
         featuredSlider.style.height = initialHeight + 'px';
     });
 
