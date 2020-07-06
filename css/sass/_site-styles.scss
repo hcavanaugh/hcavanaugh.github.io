@@ -126,7 +126,7 @@
                 transform: translateX(-50%);
             }
             &::before {
-                content: url("/assets/arrow-down.png");
+                content: url("/../assets/arrow-down.png");
             }
         }
         &--prev,
@@ -149,7 +149,7 @@
                 transform: translateX(0);
             }
             &::before {
-                content: url("/assets/arrow-left.png");
+                content: url("/../assets/arrow-left.png");
             }
         }
         &--next {
@@ -168,7 +168,7 @@
                 transform: translateX(390%);
             }
             &::before {
-                content: url("/assets/arrow-right.png");
+                content: url("/../assets/arrow-right.png");
             }
         }
         &--back-top {
