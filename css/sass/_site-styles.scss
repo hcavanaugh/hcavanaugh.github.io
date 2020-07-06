@@ -111,6 +111,24 @@
         box-shadow: none;
         border: none;
         font-weight: 300;
+        &--arrow-down {
+            position: absolute;
+            bottom: 0;
+            left: 49%;
+            z-index: 2;
+            @media screen and (min-width: 768px) {
+                animation: pulse 2s infinite ease-in-out;
+                @media screen and (prefers-reduced-motion: reduce) {
+                    animation: none;
+                }
+            }
+            @media screen and (max-width: 767px) {
+                transform: translateX(-50%);
+            }
+            &::before {
+                content: url("/assets/arrow-down.png");
+            }
+        }
         &--prev,
         &--next {
             cursor: pointer;
@@ -131,7 +149,7 @@
                 transform: translateX(0);
             }
             &::before {
-                content: url("assets/arrow-left.png");
+                content: url("/assets/arrow-left.png");
             }
         }
         &--next {
@@ -150,8 +168,13 @@
                 transform: translateX(390%);
             }
             &::before {
-                content: url("assets/arrow-right.png");
+                content: url("/assets/arrow-right.png");
             }
+        }
+        &--back-top {
+            line-height: 0;
+            padding: 15px;
+            margin-bottom: 2rem;
         }
     }
     
@@ -260,24 +283,6 @@
         @media screen and (max-width: 575px) {
             h2 {
                 margin-top: 1rem;
-            }
-        }
-        .arrow-down {
-            position: absolute;
-            bottom: 0;
-            left: 49%;
-            z-index: 2;
-            @media screen and (min-width: 768px) {
-                animation: pulse 2s infinite ease-in-out;
-                @media screen and (prefers-reduced-motion: reduce) {
-                    animation: none;
-                }
-            }
-            @media screen and (max-width: 767px) {
-                transform: translateX(-50%);
-            }
-            &::before {
-                content: url("assets/arrow-down.png");
             }
         }
     }
@@ -521,10 +526,10 @@
         .section-title {
             color: color('white');
         }
-        .contact-form {
+        #contact-form {
             display: flex;
             flex-direction: column;
-            padding: 3rem 20px;
+            padding: 3rem 20px 2rem;
             input,
             textarea {
                 background-color: color('purple');

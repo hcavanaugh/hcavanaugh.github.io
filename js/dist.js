@@ -37,7 +37,7 @@ if (tb.matches) {
             slideCount = featuredSlides.length,
             currentSlide = 0,
             slideHeight = null,
-            initialHeight = featuredSlides[0].clientHeight;
+            initialHeight = featuredSlides[0].height;
         featuredSlider.style.height = initialHeight + 'px';
         //set first image as active in the slider
         featuredSlides[0].classList.add("active");
@@ -66,12 +66,15 @@ if (tb.matches) {
 
     //Featured Slider Functions
     //Set featured slider height and obj variables on load
-    let featuredSlides = featuredSlider.querySelectorAll(".project-gallery__slide"),
+    let featuredSlides = featuredSlider.querySelectorAll(".project-gallery__slide")
+    featuredSlides[0].onload = function() {
         slideCount = featuredSlides.length,
-        currentSlide = 0,
-        slideHeight = null,
-        initialHeight = featuredSlides[0].clientHeight;
-    featuredSlider.style.height = initialHeight + 'px';
+            currentSlide = 0,
+            slideHeight = null,
+            initialHeight = featuredSlides[0].clientHeight;
+        console.log(featuredSlides[0].clientHeight);
+        featuredSlider.style.height = initialHeight + 'px';
+    };
 
     //Slider resize height function
     function galleryNavigation(n) {
@@ -216,4 +219,52 @@ function scrollAndClose(e) {
 mobileMenuTrigger.addEventListener("click", menuToggle);
 for (let i = 0; i < menuItem.length; i++) {
     menuItem[i].addEventListener("click", scrollAndClose);
+}
+
+//Contact Form AJAX submission script
+
+window.addEventListener("DOMContentLoaded", function() {
+
+    // Set form objects
+
+    let form = document.querySelector("#contact-form");
+    let button = document.querySelector("#form-submit");
+    let status = document.querySelector("#form-status");
+
+    // Success and Error functions for after the form is submitted
+
+    function success() {
+        form.reset();
+        button.style = "display: none ";
+        status.innerHTML = "Thank you for contacting me. I will be in touch with you soon.";
+    }
+
+    function error() {
+        status.innerHTML = "There was a problem submitting your form entry. Please refresh the page and try again.";
+    }
+
+    // Handle the form submission event
+
+    form.addEventListener("submit", function(ev) {
+        ev.preventDefault();
+        let data = new FormData(form);
+        ajax(form.method, form.action, data, success, error);
+    });
+});
+
+// helper function for sending an AJAX request
+
+function ajax(method, url, data, success, error) {
+    let xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState !== XMLHttpRequest.DONE) return;
+        if (xhr.status === 200) {
+            success(xhr.response, xhr.responseType);
+        } else {
+            error(xhr.status, xhr.response, xhr.responseType);
+        }
+    };
+    xhr.send(data);
 }

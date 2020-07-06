@@ -3,6 +3,7 @@
 
 .DS_Store
 assets/.DS_Store
+dist/style.min.css.map
 css/.DS_Store
 css/sass/.DS_Store
 css/dist/.DS_Store

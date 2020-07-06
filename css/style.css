@@ -174,6 +174,38 @@ hr {
   font-weight: 300;
 }
 
+.btn--arrow-down {
+  position: absolute;
+  bottom: 0;
+  left: 49%;
+  z-index: 2;
+}
+
+@media screen and (min-width: 768px) {
+  .btn--arrow-down {
+    -webkit-animation: pulse 2s infinite ease-in-out;
+            animation: pulse 2s infinite ease-in-out;
+  }
+}
+
+@media screen and (min-width: 768px) and (prefers-reduced-motion: reduce) {
+  .btn--arrow-down {
+    -webkit-animation: none;
+            animation: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .btn--arrow-down {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
+.btn--arrow-down::before {
+  content: url("/assets/arrow-down.png");
+}
+
 .btn--prev, .btn--next {
   cursor: pointer;
   display: block;
@@ -209,7 +241,7 @@ hr {
 }
 
 .btn--prev::before {
-  content: url("assets/arrow-left.png");
+  content: url("/assets/arrow-left.png");
 }
 
 .btn--next {
@@ -247,7 +279,13 @@ hr {
 }
 
 .btn--next::before {
-  content: url("assets/arrow-right.png");
+  content: url("/assets/arrow-right.png");
+}
+
+.btn--back-top {
+  line-height: 0;
+  padding: 15px;
+  margin-bottom: 2rem;
 }
 
 button {
@@ -425,38 +463,6 @@ button {
   .hero-section h2 {
     margin-top: 1rem;
   }
-}
-
-.hero-section .arrow-down {
-  position: absolute;
-  bottom: 0;
-  left: 49%;
-  z-index: 2;
-}
-
-@media screen and (min-width: 768px) {
-  .hero-section .arrow-down {
-    -webkit-animation: pulse 2s infinite ease-in-out;
-            animation: pulse 2s infinite ease-in-out;
-  }
-}
-
-@media screen and (min-width: 768px) and (prefers-reduced-motion: reduce) {
-  .hero-section .arrow-down {
-    -webkit-animation: none;
-            animation: none;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .hero-section .arrow-down {
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-  }
-}
-
-.hero-section .arrow-down::before {
-  content: url("assets/arrow-down.png");
 }
 
 @-webkit-keyframes pulse {
@@ -826,7 +832,7 @@ nav.main-menu ul.main-menu__items li a {
   color: #ffffff;
 }
 
-.contact-section .contact-form {
+.contact-section #contact-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -834,11 +840,11 @@ nav.main-menu ul.main-menu__items li a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 3rem 20px;
+  padding: 3rem 20px 2rem;
 }
 
-.contact-section .contact-form input,
-.contact-section .contact-form textarea {
+.contact-section #contact-form input,
+.contact-section #contact-form textarea {
   background-color: #63437C;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -851,30 +857,30 @@ nav.main-menu ul.main-menu__items li a {
 }
 
 @media screen and (max-width: 575px) {
-  .contact-section .contact-form input,
-  .contact-section .contact-form textarea {
+  .contact-section #contact-form input,
+  .contact-section #contact-form textarea {
     width: auto;
     margin: 8px;
   }
 }
 
-.contact-section .contact-form input::-webkit-input-placeholder,
-.contact-section .contact-form textarea::-webkit-input-placeholder {
+.contact-section #contact-form input::-webkit-input-placeholder,
+.contact-section #contact-form textarea::-webkit-input-placeholder {
   color: #ffffff;
 }
 
-.contact-section .contact-form input:-ms-input-placeholder,
-.contact-section .contact-form textarea:-ms-input-placeholder {
+.contact-section #contact-form input:-ms-input-placeholder,
+.contact-section #contact-form textarea:-ms-input-placeholder {
   color: #ffffff;
 }
 
-.contact-section .contact-form input::-ms-input-placeholder,
-.contact-section .contact-form textarea::-ms-input-placeholder {
+.contact-section #contact-form input::-ms-input-placeholder,
+.contact-section #contact-form textarea::-ms-input-placeholder {
   color: #ffffff;
 }
 
-.contact-section .contact-form input::placeholder,
-.contact-section .contact-form textarea::placeholder {
+.contact-section #contact-form input::placeholder,
+.contact-section #contact-form textarea::placeholder {
   color: #ffffff;
 }
 
