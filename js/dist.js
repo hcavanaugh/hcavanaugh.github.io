@@ -38,10 +38,10 @@ if (tb.matches) {
             currentSlide = 0,
             slideHeight = null,
             initialHeight = featuredSlides[0].height;
+        console.log(featuredSlides[0].clientHeight);
         featuredSlider.style.height = initialHeight + 'px';
         //set first image as active in the slider
         featuredSlides[0].classList.add("active");
-
     }
     //End featured data swap functions
 
@@ -66,15 +66,15 @@ if (tb.matches) {
 
     //Featured Slider Functions
     //Set featured slider height and obj variables on load
-    let featuredSlides = featuredSlider.querySelectorAll(".project-gallery__slide")
-    featuredSlides[0].onload = function() {
-        slideCount = featuredSlides.length,
+    window.addEventListener("load", function() {
+        featuredSlides = featuredSlider.querySelectorAll(".project-gallery__slide"),
+            slideCount = featuredSlides.length,
             currentSlide = 0,
             slideHeight = null,
             initialHeight = featuredSlides[0].clientHeight;
         console.log(featuredSlides[0].clientHeight);
         featuredSlider.style.height = initialHeight + 'px';
-    };
+    });
 
     //Slider resize height function
     function galleryNavigation(n) {
