@@ -62,16 +62,16 @@
             <h2>Web Developer</h2>
             <h3>New York &amp; Europe</h3>
         </div>
-        <a class="btn--arrow-down" href="#about" aria-label="aria-hidden"></a>
+        <a class="btn--arrow-down" href="#about" aria-hidden="true"></a>
     </section>
     <nav class="main-menu" role="navigation">
-        <ul class="main-menu__items">
+        <ul id="menu" class="main-menu__items">
             <li><a class="main-menu__link" href="#home">Home</a></li>
             <li><a class="main-menu__link" href="#about">About</a></li>
             <li><a class="main-menu__link" href="#projects">Projects</a></li>
             <li><a class="main-menu__link" href="#contact">Contact</a></li>
         </ul>
-        <a class="mobile-toggle" aria-label="Open the Mobile Menu" aria-expanded="false" aria-controls="main-menu__items"><img src="assets/bars-solid.svg" aria-label="hidden" /></a>
+        <a class="mobile-toggle" aria-label="Open the Mobile Menu" aria-expanded="false" aria-controls="menu"><img src="assets/bars-solid.svg" aria-hidden="true" /></a>
     </nav>
     <section id="about" class="about-section">
         <h2 class="section-title">About</h2>
@@ -190,7 +190,7 @@
                 <button id="form-submit" class="btn" type="submit">Send</button>
             </div>
         </form>
-        <a href="#home" class="btn btn--back-top" aria-label="Back to Top" role="button"><img src="assets/back-top-arrow.png" alt="back to top" /></a>
+        <a href="#home" class="btn btn--back-top" aria-label="Back to Top" role="button"><img src="assets/back-top-arrow.png" alt="back to top" aria-hidden="true" /></a>
         <p class="font-light">Heather Cavanaugh <span class="gold">&copy;2020</span></p>
     </section>
     <footer>

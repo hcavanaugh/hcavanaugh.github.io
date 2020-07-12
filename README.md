@@ -1,4 +1,4 @@
-# cavanaugh-dev.github.io
+# hcavanaugh.github.io
 My portfolio website
 
-View site here: https://hcavanaugh.github.io/
+View site here: https://cavanaugh.dev
