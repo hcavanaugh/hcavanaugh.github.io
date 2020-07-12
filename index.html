@@ -64,14 +64,14 @@
         </div>
         <a class="btn--arrow-down" href="#about" aria-label="aria-hidden"></a>
     </section>
-    <nav class="main-menu">
+    <nav class="main-menu" role="navigation">
         <ul class="main-menu__items">
             <li><a class="main-menu__link" href="#home">Home</a></li>
             <li><a class="main-menu__link" href="#about">About</a></li>
             <li><a class="main-menu__link" href="#projects">Projects</a></li>
             <li><a class="main-menu__link" href="#contact">Contact</a></li>
         </ul>
-        <a class="mobile-toggle"><img src="assets/bars-solid.svg" /></a>
+        <a class="mobile-toggle" aria-label="Open the Mobile Menu" aria-expanded="false" aria-controls="main-menu__items"><img src="assets/bars-solid.svg" aria-label="hidden" /></a>
     </nav>
     <section id="about" class="about-section">
         <h2 class="section-title">About</h2>
@@ -85,19 +85,19 @@
 
             </div>
             <div class="flex-col--half">
-                <img src="assets/heather_cavanaugh_dev.jpg" class="profile-picture" />
+                <img src="assets/heather_cavanaugh_dev.jpg" class="profile-picture" alt="Heather Cavanaugh Profile Picture" />
                 <div class="flex-row">
                     <div class="social-icon">
-                        <a href="https://www.linkedin.com/in/heather-cavanaugh/" target="_blank"><img src="assets/linkedin-icon.png" /></a>
+                        <a href="https://www.linkedin.com/in/heather-cavanaugh/" target="_blank"><img src="assets/linkedin-icon.png" alt="LinkedIn" /></a>
                     </div>
                     <div class="social-icon">
-                        <a href="http://codepen.io/hcavanaugh/" target="_blank"><img src="assets/codepen-icon.png" /></a>
+                        <a href="http://codepen.io/hcavanaugh/" target="_blank"><img src="assets/codepen-icon.png" alt="Codepen" /></a>
                     </div>
                     <div class="social-icon">
-                        <a href="https://github.com/hcavanaugh" target="_blank"><img src="assets/github.png" /></a>
+                        <a href="https://github.com/hcavanaugh" target="_blank"><img src="assets/github.png" alt="Github" /></a>
                     </div>
                     <div class="social-icon">
-                        <a href="https://twitter.com/HeatherCavs" target="_blank"><img src="assets/twitter-icon.png" /></a>
+                        <a href="https://twitter.com/HeatherCavs" target="_blank"><img src="assets/twitter-icon.png" alt="Twitter" /></a>
                     </div>
                 </div>
                 <a class="btn" href="assets/Heather_Cavanaugh_Resume.pdf" target="_blank">View Resume</a>
@@ -108,11 +108,11 @@
         <h2 class="section-title">Projects</h2>
         <div class="project-gallery">
             <div class="project-gallery__images">
-                <div class="project-gallery__item">
-                    <img src="assets/platinumplat-featured.jpg" class="project-gallery__slide--main" />
-                    <img src="assets/platinumplat-slide1.jpg" class="project-gallery__slide" />
-                    <img src="assets/platinumplat-slide2.jpg" class="project-gallery__slide" />
-                    <img src="assets/platinumplat-slide3.jpg" class="project-gallery__slide" />
+                <div class="project-gallery__item" aria-label="Display Project Details" role="gallery thumbnail">
+                    <img src="assets/platinumplat-featured.jpg" class="project-gallery__slide--main" alt="Platinum Platypus Homepage" />
+                    <img src="assets/platinumplat-slide1.jpg" class="project-gallery__slide" alt="Platinum Platypus Service Page Template" />
+                    <img src="assets/platinumplat-slide2.jpg" class="project-gallery__slide" alt="Platinum Platypus Homepage" />
+                    <img src="assets/platinumplat-slide3.jpg" class="project-gallery__slide" alt="Platinum Platypus Service Page Template with Video" />
                     <div class="project-gallery__item-info">
                         <h3>Platinum Platypus</h3>
                         <h4>VFX and Video Marketing</h4>
@@ -121,24 +121,24 @@
                         <a class="btn" href="https://platinumplatypus.com/" target="_blank">Visit Site</a>
                     </div>
                 </div>
-                <div class="project-gallery__item">
-                    <img src="assets/smmadvertising-featured.jpg" class="project-gallery__slide--main" />
-                    <img src="assets/smmadvertising-slide1.jpg" class="project-gallery__slide" />
-                    <img src="assets/smmadvertising-slide2.jpg" class="project-gallery__slide" />
-                    <img src="assets/smmadvertising-slide3.jpg" class="project-gallery__slide" />
+                <div class="project-gallery__item" aria-label="Display Project Details" role="gallery thumbnail">
+                    <img src="assets/smmadvertising-featured.jpg" class="project-gallery__slide--main" alt="SMM Advertising Homepage" />
+                    <img src="assets/smmadvertising-slide1.jpg" class="project-gallery__slide" alt="SMM Advertising About Page" />
+                    <img src="assets/smmadvertising-slide2.jpg" class="project-gallery__slide" alt="SMM Advertising Homepage" />
+                    <img src="assets/smmadvertising-slide3.jpg" class="project-gallery__slide" alt="SMM Advertising Case Studies Page" />
                     <div class="project-gallery__item-info">
                         <h3>SMM Advertising</h3>
                         <h4>Digital Marketing</h4>
                         <hr>
-                        <p>A visually crisp website and snap scroll animations for a long-standing modern marketing company. Animated with jQuery and Javascript libraries.</p>
+                        <p>A visually crisp website that includes snap scroll animations for a long-standing modern marketing company. Animated with jQuery and Javascript libraries.</p>
                         <a class="btn" href="https://smmadvertising.com/" target="_blank">Visit Site</a>
                     </div>
                 </div>
-                <div class="project-gallery__item">
-                    <img src="assets/cavanaughhomes-featured.jpg" class="project-gallery__slide--main" />
-                    <img src="assets/cavanaughhomes-slide1.jpg" class="project-gallery__slide" />
-                    <img src="assets/cavanaughhomes-slide2.jpg" class="project-gallery__slide" />
-                    <img src="assets/cavanaughhomes-slide3.jpg" class="project-gallery__slide" />
+                <div class="project-gallery__item" aria-label="Display Project Details" role="gallery thumbnail">
+                    <img src="assets/cavanaughhomes-featured.jpg" class="project-gallery__slide--main" alt="Cavanaugh Homes Homepage" />
+                    <img src="assets/cavanaughhomes-slide1.jpg" class="project-gallery__slide" alt="Cavanaugh Homes Homepage Detail" />
+                    <img src="assets/cavanaughhomes-slide2.jpg" class="project-gallery__slide" alt="Cavanaugh Homes Homepage" />
+                    <img src="assets/cavanaughhomes-slide3.jpg" class="project-gallery__slide" alt="Cavanaugh Homes Homepage Detail" />
                     <div class="project-gallery__item-info">
                         <h3>Cavanaugh Homes</h3>
                         <h4>Real Estate</h4>
@@ -151,16 +151,16 @@
         </div>
         <div class="project-featured flex-row">
             <div class="project-featured__wrap flex-col--half">
-                <div class="project-featured__images">
-                    <a class="gallery-ctrl btn--prev"></a>
-                    <a class="gallery-ctrl btn--next"></a>
-                    <img src="assets/platinumplat-slide1.jpg" class="project-gallery__slide active" />
-                    <img src="assets/platinumplat-slide2.jpg" class="project-gallery__slide" />
-                    <img src="assets/platinumplat-slide3.jpg" class="project-gallery__slide" />
+                <div class="project-featured__images" aria-label="Project Gallery Slider">
+                    <a class="gallery-ctrl btn--prev" aria-label="Show Previous Slide"></a>
+                    <a class="gallery-ctrl btn--next" aria-label="Show Next Slide"></a>
+                    <img src="assets/platinumplat-slide1.jpg" class="project-gallery__slide active" alt="Platinum Platypus Service Page Template" />
+                    <img src="assets/platinumplat-slide2.jpg" class="project-gallery__slide" alt="Platinum Platypus Homepage" />
+                    <img src="assets/platinumplat-slide3.jpg" class="project-gallery__slide" alt="Platinum Platypus Service Page Template with Video" />
                 </div>
             </div>
             <div class="project-featured__info flex-col--half">
-                <div class="project-gallery__item-info">
+                <div class="project-gallery__item-info" aria-label="Project Details" aria-role="gallery caption">
                     <h3>Platinum Platypus</h3>
                     <h4>VFX and Video Marketing</h4>
                     <hr>
@@ -181,16 +181,16 @@
             <label aria-label="Email (required)" for="_replyto">
             </label>
             <input type="email" placeholder="Email*" name="_replyto" required>
-            <label aria-label="Your message" for="message">
+            <label aria-label="Your Message (required)" for="message">
             </label>
-            <textarea placeholder="Your message" name="message" rows="6"></textarea>
+            <textarea placeholder="Your Message*" name="message" rows="6" required></textarea>
             <p class="font-light" aria-hidden="true">Fields marked with * are required</p>
             <p id="form-status" class="text-center"></p>
             <div class="flex-end">
                 <button id="form-submit" class="btn" type="submit">Send</button>
             </div>
         </form>
-        <a href="#home" class="btn btn--back-top" aria-label="Back to Top"><img src="assets/back-top-arrow.png" alt="back to top" /></a>
+        <a href="#home" class="btn btn--back-top" aria-label="Back to Top" role="button"><img src="assets/back-top-arrow.png" alt="back to top" /></a>
         <p class="font-light">Heather Cavanaugh <span class="gold">&copy;2020</span></p>
     </section>
     <footer>

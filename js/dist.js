@@ -6,18 +6,18 @@
 const tb = window.matchMedia('(min-width: 768px)');
 
 //Set these variables as global objects
-const galleryThumbs = document.getElementsByClassName("project-gallery__item");
-const featuredSlider = document.querySelector(".project-featured__images");
-const featuredInfo = document.querySelector(".project-featured__info");
+const galleryThumbs = document.getElementsByClassName('project-gallery__item');
+const featuredSlider = document.querySelector('.project-featured__images');
+const featuredInfo = document.querySelector('.project-featured__info');
 
 if (tb.matches) {
 
     //Change data in featured project section
     function featuredGallery(event) {
-        let newSlides = event.target.getElementsByClassName("project-gallery__slide");
-        let newInfo = event.target.querySelector(".project-gallery__item-info");
-        featuredSlides = featuredSlider.querySelectorAll(".project-gallery__slide");
-        let featuredInfoText = featuredInfo.querySelector(".project-gallery__item-info");
+        let newSlides = event.target.getElementsByClassName('project-gallery__slide');
+        let newInfo = event.target.querySelector('.project-gallery__item-info');
+        featuredSlides = featuredSlider.querySelectorAll('.project-gallery__slide');
+        let featuredInfoText = featuredInfo.querySelector('.project-gallery__item-info');
         //remove pre-existing slides in featured slider container
         for (let featuredSlide of featuredSlides) {
             featuredSlide.remove();
@@ -33,40 +33,40 @@ if (tb.matches) {
         featuredInfo.append(cloneInfo);
 
         //reset variables for featured slider + height to finish this loop function
-        featuredSlides = featuredSlider.querySelectorAll(".project-gallery__slide"),
+        featuredSlides = featuredSlider.querySelectorAll('.project-gallery__slide'),
             slideCount = featuredSlides.length,
             currentSlide = 0,
             slideHeight = null,
             initialHeight = featuredSlides[0].height;
         featuredSlider.style.height = initialHeight + 'px';
         //set first image as active in the slider
-        featuredSlides[0].classList.add("active");
+        featuredSlides[0].classList.add('active');
     }
     //End featured data swap functions
 
     //add selected class to first gallery thumbnail on load
-    galleryThumbs[0].classList.add("selected");
+    galleryThumbs[0].classList.add('selected');
 
     //toggle selected class for gallery thumbnails
     function mainGallery() {
         for (let galleryThumb of galleryThumbs) {
-            galleryThumb.classList.remove("selected");
+            galleryThumb.classList.remove('selected');
         }
         //add selected class to the clicked gallery thumbnail
-        event.target.classList.add("selected");
+        event.target.classList.add('selected');
     }
     //End gallery thumbnail functions
 
     //Event listeners for gallery thumbnails + featured gallery data swap
     for (let i = 0; i < galleryThumbs.length; i++) {
-        galleryThumbs[i].addEventListener("click", featuredGallery);
-        galleryThumbs[i].addEventListener("click", mainGallery);
+        galleryThumbs[i].addEventListener('click', featuredGallery);
+        galleryThumbs[i].addEventListener('click', mainGallery);
     }
 
     //Featured Slider Functions
     //Set featured slider height and obj variables on load
-    window.addEventListener("load", function() {
-        featuredSlides = featuredSlider.querySelectorAll(".project-gallery__slide"),
+    window.addEventListener('load', function() {
+        featuredSlides = featuredSlider.querySelectorAll('.project-gallery__slide'),
             slideCount = featuredSlides.length,
             currentSlide = 0,
             slideHeight = null,
@@ -76,9 +76,9 @@ if (tb.matches) {
 
     //Slider resize height function
     function galleryNavigation(n) {
-        featuredSlides[currentSlide].className = "project-gallery__slide";
+        featuredSlides[currentSlide].className = 'project-gallery__slide';
         currentSlide = (n + slideCount) % slideCount;
-        featuredSlides[currentSlide].className = "project-gallery__slide active";
+        featuredSlides[currentSlide].className = 'project-gallery__slide active';
         slideHeight = featuredSlides[currentSlide].clientHeight;
         featuredSlider.style.height = slideHeight + 'px';
 
@@ -161,46 +161,53 @@ if (tb.matches) {
     };
 
     //Event listeners for swipe slider function
-    featuredSlider.addEventListener("touchstart", startTouch, false);
-    featuredSlider.addEventListener("touchmove", moveTouch, false);
+    featuredSlider.addEventListener('touchstart', startTouch, false);
+    featuredSlider.addEventListener('touchmove', moveTouch, false);
 
 } //End featured slider functions
 
 //Sticky menu scroll navigation
-const hero = document.querySelector("#home");
-const about = document.querySelector("#about");
-const nav = document.querySelector(".main-menu");
+const hero = document.querySelector('#home');
+const about = document.querySelector('#about');
+const nav = document.querySelector('.main-menu');
 let heroHeight = hero.clientHeight;
 
 function scrollPosition() {
     //add sticky class once user scrolls past hero section
     if (window.scrollY > heroHeight) {
-        about.style.marginTop = "60px";
-        nav.classList.add("sticky");
+        about.style.marginTop = '60px';
+        nav.classList.add('sticky');
     }
     //remove sticky class if user is viewing the hero section
     if (window.scrollY < heroHeight) {
-        about.style.marginTop = "0";
-        nav.classList.remove("sticky");
+        about.style.marginTop = '0';
+        nav.classList.remove('sticky');
     }
 };
 
-document.addEventListener("scroll", scrollPosition);
+document.addEventListener('scroll', scrollPosition);
 //End Sticky menu scroll navigation
 
 //Mobile menu functions
 
-const mobileMenuTrigger = document.querySelector(".mobile-toggle");
-const menu = document.querySelector(".main-menu__items");
-const menuItem = document.querySelectorAll(".main-menu__link");
+const mobileMenuTrigger = document.querySelector('.mobile-toggle');
+const menu = document.querySelector('.main-menu__items');
+const menuItem = document.querySelectorAll('.main-menu__link');
+
 //open/close menu on tap
 function menuToggle() {
-    menu.classList.toggle("open");
+    menu.classList.toggle('open');
+    if (menu.classList.contains('open')) {
+        mobileMenuTrigger.setAttribute('aria-expanded', 'true');
+    } else {
+        mobileMenuTrigger.setAttribute('aria-expanded', 'false');
+    }
+
 }
 
 //If a user clicks one of the menu anchor links, close the menu
 function scrollAndClose(e) {
-    menu.classList.remove("open");
+    menu.classList.remove('open');
 
     //Note: scroll script in place as a fallback for CSS 'scroll-behavior'
 
@@ -214,38 +221,38 @@ function scrollAndClose(e) {
 }
 
 //Event listeners for mobile menu
-mobileMenuTrigger.addEventListener("click", menuToggle);
+mobileMenuTrigger.addEventListener('click', menuToggle);
 for (let i = 0; i < menuItem.length; i++) {
-    menuItem[i].addEventListener("click", scrollAndClose);
+    menuItem[i].addEventListener('click', scrollAndClose);
 }
 
 //Contact Form AJAX submission script
 
-window.addEventListener("DOMContentLoaded", function() {
+window.addEventListener('DOMContentLoaded', function() {
 
     // Set form objects
 
-    let form = document.querySelector("#contact-form");
-    let button = document.querySelector("#form-submit");
-    let status = document.querySelector("#form-status");
-    status.style = "display: none ";
+    let form = document.querySelector('#contact-form');
+    let button = document.querySelector('#form-submit');
+    let status = document.querySelector('#form-status');
+    status.style = 'display: none ';
 
     // Success and Error functions for after the form is submitted
 
     function success() {
         form.reset();
-        button.style = "display: none ";
-        status.style = "display: block ";
-        status.innerHTML = "Thank you for contacting me. I will be in touch with you soon.";
+        button.style = 'display: none ';
+        status.style = 'display: block ';
+        status.innerHTML = 'Thank you for contacting me. I will be in touch with you soon.';
     }
 
     function error() {
-        status.innerHTML = "There was a problem submitting your form entry. Please refresh the page and try again.";
+        status.innerHTML = 'There was a problem submitting your form entry. Please refresh the page and try again.';
     }
 
     // Handle the form submission event
 
-    form.addEventListener("submit", function(ev) {
+    form.addEventListener('submit', function(ev) {
         ev.preventDefault();
         let data = new FormData(form);
         ajax(form.method, form.action, data, success, error);
@@ -257,7 +264,7 @@ window.addEventListener("DOMContentLoaded", function() {
 function ajax(method, url, data, success, error) {
     let xhr = new XMLHttpRequest();
     xhr.open(method, url);
-    xhr.setRequestHeader("Accept", "application/json");
+    xhr.setRequestHeader('Accept', 'application/json');
     xhr.onreadystatechange = function() {
         if (xhr.readyState !== XMLHttpRequest.DONE) return;
         if (xhr.status === 200) {
