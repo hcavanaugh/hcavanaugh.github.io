@@ -178,13 +178,13 @@
             <form id="contact-form" action="https://formspree.io/xwkrkydl" method="POST">
                 <label aria-label="Name (required)" for="name">
                 </label>
-                <input type="text" placeholder="Name*" name="name" required>
-                <label aria-label="Email (required)" for="_replyto">
+                <input id="name" type="text" placeholder="Name*" name="name" required>
+                <label aria-label="Email (required)" for="email">
                 </label>
-                <input type="email" placeholder="Email*" name="_replyto" required>
+                <input id="email" type="email" placeholder="Email*" name="_replyto" required>
                 <label aria-label="Your Message (required)" for="message">
                 </label>
-                <textarea placeholder="Your Message*" name="message" rows="6" required></textarea>
+                <textarea id="message" placeholder="Your Message*" name="message" rows="6" required></textarea>
                 <p class="font-light" aria-hidden="true">Fields marked with * are required</p>
                 <p id="form-status" class="text-center"></p>
                 <div class="flex-end">
