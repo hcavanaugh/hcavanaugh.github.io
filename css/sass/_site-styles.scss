@@ -1,10 +1,10 @@
     @import "_variables-funct";
     /* Site styles */
-    
+
     html {
         scroll-behavior: smooth;
     }
-    
+
     body {
         background: color('white');
         width: 100%;
@@ -13,14 +13,14 @@
         font-weight: 400;
         line-height: 2em;
     }
-    
+
     body,
     textarea,
     input,
     button {
         font-family: 'Heebo', Arial, sans-serif;
     }
-    
+
     section>*,
     ul.main-menu__items {
         margin: 0 auto;
@@ -40,59 +40,59 @@
             max-width: 1170px;
         }
     }
-    
+
     section {
         padding: 4rem 0;
     }
-    
+
     @for $index from 1 through 6 {
         h#{$index} {
             font-weight: 500;
             margin: 0;
         }
     }
-    
+
     h1 {
         font-size: 4rem;
         @media screen and (max-width: 575px) {
             font-size: 3rem;
         }
     }
-    
+
     h2 {
         font-size: 3rem;
         @media screen and (max-width: 575px) {
             font-size: 2rem;
         }
     }
-    
+
     h3 {
         font-size: 2rem;
         @media screen and (max-width: 575px) {
             font-size: 1.5rem;
         }
     }
-    
+
     h4 {
         font-size: 1.5rem;
         @media screen and (max-width: 575px) {
             font-size: 1rem;
         }
     }
-    
+
     .text-center {
         text-align: center;
     }
-    
+
     a {
         color: color('purple');
     }
-    
+
     hr {
         color: color('light-grey');
         margin: 1.75rem 0;
     }
-    
+
     @media screen and (max-width: 575px) {
         p {
             padding: 0 20px;
@@ -100,10 +100,10 @@
         }
     }
     /* button styling */
-    
+
     .btn {
         background-color: color('gold');
-        color: color('white');
+        color: color('black');
         text-transform: uppercase;
         font-size: 1.1rem;
         padding: 12px 26px;
@@ -180,18 +180,18 @@
             margin-bottom: 2rem;
         }
     }
-    
+
     button {
         cursor: pointer;
     }
     /* flexbox styling */
-    
+
     .flex-row {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
     }
-    
+
     .flex-col {
         flex: 1 1 auto;
         &--half {
@@ -201,7 +201,7 @@
             }
         }
     }
-    
+
     .flex-end {
         display: flex;
         justify-content: flex-end;
@@ -209,7 +209,7 @@
             justify-content: center;
         }
     }
-    
+
     .section-title {
         text-decoration: underline;
         text-transform: uppercase;
@@ -218,7 +218,7 @@
         padding-bottom: 2rem;
         color: #444649;
     }
-    
+
     @keyframes waves {
         0% {
             transform: scale(1, 1);
@@ -230,7 +230,7 @@
             transform: scale(1, 1);
         }
     }
-    
+
     .hero-section {
         background-color: color('dark-purple');
         @include background;
@@ -289,7 +289,7 @@
             }
         }
     }
-    
+
     @keyframes pulse {
         0% {
             transform: scale(1);
@@ -301,7 +301,7 @@
             transform: scale(1);
         }
     }
-    
+
     nav.main-menu {
         height: 60px;
         background-color: color('purple');
@@ -370,7 +370,7 @@
             }
         }
     }
-    
+
     .about-section {
         @media screen and (max-width: 768px) {
             & > .flex-row {
@@ -399,7 +399,7 @@
             padding: 15px;
         }
     }
-    
+
     .project-section {
         background-color: #EEEEEE;
         .project-gallery {
@@ -520,7 +520,7 @@
             }
         }
     }
-    
+
     .contact-section {
         background-color: color('dark-purple');
         color: color('white');
