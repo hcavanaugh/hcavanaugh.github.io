@@ -48,7 +48,7 @@ if (tb.matches) {
     galleryThumbs[0].classList.add('selected');
 
     //toggle selected class for gallery thumbnails
-    function mainGallery() {
+    function mainGallery(event) {
         for (let galleryThumb of galleryThumbs) {
             galleryThumb.classList.remove('selected');
         }
@@ -59,8 +59,8 @@ if (tb.matches) {
 
     //Event listeners for gallery thumbnails + featured gallery data swap
     for (let i = 0; i < galleryThumbs.length; i++) {
-        galleryThumbs[i].addEventListener('click', featuredGallery);
-        galleryThumbs[i].addEventListener('click', mainGallery);
+        galleryThumbs[i].addEventListener('click', (event) => { featuredGallery(event) });
+        galleryThumbs[i].addEventListener('click', (event) => { mainGallery(event) });
     }
 
     //Featured Slider Functions
@@ -166,28 +166,6 @@ if (tb.matches) {
 
 } //End featured slider functions
 
-//Sticky menu scroll navigation
-const hero = document.querySelector('#home');
-const about = document.querySelector('#about');
-const nav = document.querySelector('.main-menu');
-let heroHeight = hero.clientHeight;
-
-function scrollPosition() {
-    //add sticky class once user scrolls past hero section
-    if (window.scrollY > heroHeight) {
-        about.style.marginTop = '60px';
-        nav.classList.add('sticky');
-    }
-    //remove sticky class if user is viewing the hero section
-    if (window.scrollY < heroHeight) {
-        about.style.marginTop = '0';
-        nav.classList.remove('sticky');
-    }
-};
-
-document.addEventListener('scroll', scrollPosition);
-//End Sticky menu scroll navigation
-
 //Mobile menu functions
 
 const mobileMenuTrigger = document.querySelector('.mobile-toggle');
@@ -208,16 +186,6 @@ function menuToggle() {
 //If a user clicks one of the menu anchor links, close the menu
 function scrollAndClose(e) {
     menu.classList.remove('open');
-
-    //Note: scroll script in place as a fallback for CSS 'scroll-behavior'
-
-    //   const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
-    //   e.preventDefault();
-    //   let anchorLink = this.getAttribute('href');
-    //   const anchor = document.querySelector(anchorLink)
-    //   const originalTop = distanceToTop(anchor);
-    //   console.log(originalTop);
-    //   window.scrollBy({ top: originalTop, behavior: 'smooth' });
 }
 
 //Event listeners for mobile menu
