@@ -61,6 +61,8 @@ if (tb.matches) {
     for (let i = 0; i < galleryThumbs.length; i++) {
         galleryThumbs[i].addEventListener('click', (event) => { featuredGallery(event) });
         galleryThumbs[i].addEventListener('click', (event) => { mainGallery(event) });
+        galleryThumbs[i].addEventListener('keydown', (event) => { if (event.code === 'Enter') { featuredGallery(event) } });
+        galleryThumbs[i].addEventListener('keydown', (event) => { if (event.code === 'Enter') { mainGallery(event) } });
     }
 
     //Featured Slider Functions
