@@ -199,12 +199,14 @@ for (let i = 0; i < menuItem.length; i++) {
 //Animation toggle
 
 const animationToggle = document.querySelector('#animation-toggle');
+const toggleContainer = document.querySelector('.animation-input-wrap');
 const heroSection = document.querySelector('.hero-section');
 animationToggle.addEventListener('click', toggleAnimation);
-animationToggle.addEventListener('keydown', toggleAnimation);
+toggleContainer.addEventListener('keydown',  (event) => { if (event.code === 'Enter') { toggleAnimation(); } });
 
 function toggleAnimation() {
-    if(heroSection.classList.contains('stop-animation')) {
+    animationToggle.toggleAttribute("checked");
+    if(animationToggle.hasAttribute('checked')) {
         heroSection.classList.remove('stop-animation');
     } else {
         heroSection.classList.add('stop-animation');

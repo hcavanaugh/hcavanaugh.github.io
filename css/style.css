@@ -684,7 +684,7 @@ nav.main-menu #animation-toggle + label::after {
   top: 2px;
   right: 48px;
   border-radius: 50%;
-  background-color: #e8e8e8;
+  background-color: #D0AE55;
   -webkit-box-shadow: 2px 0px 0px black;
           box-shadow: 2px 0px 0px black;
 }
