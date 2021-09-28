@@ -22,7 +22,7 @@
     }
 
     section>*,
-    ul.main-menu__items {
+    .menu-container {
         margin: 0 auto;
         @media screen and (max-width: 575px) {
             max-width: 100%;
@@ -243,6 +243,9 @@
         padding: 0;
         line-height: 3em;
         overflow: hidden;
+        &.stop-animation #svgWave .wave {
+            animation: none;
+        }
         #svgWave {
             position: absolute;
             bottom: 0;
@@ -310,12 +313,12 @@
         //     position: fixed;
         //     top: 0;
         // }
-        @media screen and (max-width: 575px) {
+        @media screen and (max-width: 750px) {
             align-items: inherit;
         }
         .mobile-toggle {
             display: none;
-            @media screen and (max-width: 575px) {
+            @media screen and (max-width: 750px) {
                 display: flex;
                 align-items: center;
                 flex: 1 1 auto;
@@ -323,36 +326,47 @@
                 padding-right: 20px;
                 cursor: pointer;
                 z-index: 60;
+                max-width: 60px;
                 img {
                     max-width: 40px;
                 }
             }
         }
+        .menu-container {
+            width: 100%;
+            display: flex;
+            align-items: center;  
+            justify-content: space-between;
+            @media screen and (max-width: 750px) {
+                justify-content: end;
+            }
+        }
         ul.main-menu__items {
             padding-left: 0;
-            margin: 0 auto;
             list-style-type: none;
             display: flex;
             flex-direction: row;
-            width: 100%;
             z-index: 5;
-            @media screen and (max-width: 575px) {
+            @media screen and (max-width: 750px) {
                 opacity: 0;
                 flex-direction: column;
-                padding-top: 60px;
-                margin-right: -20px;
+                padding-top: 44px;
+                align-self: baseline;
                 transition: all 300ms ease-in-out;
+                position: absolute;
+                right: 0;
+                width: 100%;
                 &.open {
                     opacity: 1;
                 }
             }
             li {
                 padding: 0 20px;
-                @media screen and (max-width: 575px) {
+                @media screen and (max-width: 750px) {
                     padding: .25rem 60px;
                     background-color: color("purple");
                 }
-                @media screen and (min-width: 575px) {
+                @media screen and (min-width: 750px) {
                     &:first-of-type {
                         padding-left: 0px;
                     }
@@ -362,6 +376,60 @@
                     font-weight: 300;
                     font-size: 1.5rem;
                     color: color('gold');
+                }
+            }
+        }
+        .animation-input-wrap {
+            position: relative;
+            padding: 8px;
+            z-index: 99;
+            display: flex;
+            align-items: center;
+        }
+        .toggle-label {
+            color: color('gold');
+            margin-right: 1rem;
+        }
+        #animation-toggle {
+            position: absolute !important;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            bottom: 0;
+            & + label {
+                color: color('gold');
+                background-color: #fff;
+                transition: background-color 500ms ease;
+                cursor: pointer;
+                font-size: 0;
+                border-radius: 22px;
+                display: inline-block;
+                position: relative;
+                height: 44px;
+                width: 90px;
+                &::after {
+                    transition: right 500ms ease, 
+                    background-color 500ms ease, 
+                    box-shadow 500ms ease;
+                    content: "";
+                    display: block;
+                    height: 40px;
+                    width: 40px;
+                    position: absolute;
+                    top: 2px;
+                    right: 48px;
+                    border-radius: 50%;
+                    background-color: #e8e8e8;
+                    box-shadow: 2px 0px 0px rgba(0, 0, 0, 15%);
+                }
+            }
+            &:checked + label {
+                background: color('gold');
+                &::after {
+                    right: 2px;
+                    background-color: #fff;
+                    box-shadow: -2px 0px 0px rgba(0, 0, 0, 0.1);
                 }
             }
         }

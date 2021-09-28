@@ -196,6 +196,21 @@ for (let i = 0; i < menuItem.length; i++) {
     menuItem[i].addEventListener('click', scrollAndClose);
 }
 
+//Animation toggle
+
+const animationToggle = document.querySelector('#animation-toggle');
+const heroSection = document.querySelector('.hero-section');
+animationToggle.addEventListener('click', toggleAnimation);
+animationToggle.addEventListener('keydown', toggleAnimation);
+
+function toggleAnimation() {
+    if(heroSection.classList.contains('stop-animation')) {
+        heroSection.classList.remove('stop-animation');
+    } else {
+        heroSection.classList.add('stop-animation');
+    }
+}
+
 //Contact Form AJAX submission script
 
 window.addEventListener('DOMContentLoaded', function() {
