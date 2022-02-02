@@ -6,7 +6,7 @@
 const tb = window.matchMedia('(min-width: 768px)');
 
 //Set these variables as global objects
-const galleryThumbs = document.getElementsByClassName('project-gallery__item');
+const galleryThumbs = document.querySelectorAll('.project-gallery__item');
 const featuredSlider = document.querySelector('.project-featured__images');
 const featuredInfo = document.querySelector('.project-featured__info');
 
@@ -14,7 +14,7 @@ if (tb.matches) {
 
     //Change data in featured project section
     function featuredGallery(event) {
-        let newSlides = event.target.getElementsByClassName('project-gallery__slide');
+        let newSlides = event.target.querySelectorAll('.project-gallery__slide');
         let newInfo = event.target.querySelector('.project-gallery__item-info');
         featuredSlides = featuredSlider.querySelectorAll('.project-gallery__slide');
         let featuredInfoText = featuredInfo.querySelector('.project-gallery__item-info');

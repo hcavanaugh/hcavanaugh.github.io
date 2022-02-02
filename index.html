@@ -73,9 +73,9 @@
                     <li><a class="main-menu__link" href="#projects">Projects</a></li>
                     <li><a class="main-menu__link" href="#contact">Contact</a></li>
                 </ul>
-                <div class="animation-input-wrap" tabindex="0">
+                <div class="animation-input-wrap" aria-label="Stop animation on this site" tabindex="0">
                     <span class="toggle-label">Animation</span>
-                    <input id="animation-toggle" type="checkbox" aria-label="Stop animation on this site" aria-controls="animation" checked tabindex="-1">
+                    <input id="animation-toggle" type="checkbox" aria-controls="animation" checked tabindex="-1">
                     <label for="animation-toggle">Toggle Animation</label>
                 </div> 
                 <a class="mobile-toggle" aria-label="Open the Mobile Menu" aria-expanded="false" aria-controls="menu"><img src="assets/bars-solid.svg" aria-hidden="true" /></a>
@@ -84,15 +84,15 @@
         <section id="about" class="about-section">
             <h2 class="section-title">About</h2>
             <div class="flex-row">
-                <div class="flex-col--half">
+                <div class="flex-col flex-col--half">
                     <h4 class="text-center">Heather Cavanaugh:</h4>
-                    <p>I am a Web Developer on Long Island in New York <br> Specialize in Front End Web Development <br> Have over 10 years of experience in marketing <br> Can conduct business in the European Union <br> Create websites with
+                    <p>I am a Web Developer on Long Island in New York <br> Specialize in Front End Web Development <br> Have over 5 years experience <br> Can conduct business in the European Union <br> Create websites with
                         a focus on SEO and Marketing
                     </p>
                     <p class="text-center"><a href="#contact"><strong>Let's create something special</strong></a></p>
 
                 </div>
-                <div class="flex-col--half">
+                <div class="flex-col flex-col--half">
                     <img src="assets/heather_cavanaugh_dev.jpg" class="profile-picture" alt="Heather Cavanaugh Profile Picture" />
                     <div class="flex-row">
                         <div class="social-icon">
@@ -116,6 +116,24 @@
             <h2 class="section-title">Projects</h2>
             <div class="project-gallery">
                 <div class="project-gallery__images">
+                    <div class="project-gallery__item" aria-label="Display Project Details" role="tab" tabindex="0">
+                        <img src="assets/twistedthrottle-featured.jpg" class="project-gallery__slide--main" alt="Twisted Throttle Homepage" />
+                        <img src="assets/twistedthrottle-slide1.png" class="project-gallery__slide active" alt="Twisted Throttle Blog Post" />
+                        <img src="assets/twistedthrottle-slide2.jpg" class="project-gallery__slide" alt="Twisted Throttle Garage Widget" />
+                        <img src="assets/twistedthrottle-slide3.jpg" class="project-gallery__slide" alt="Twisted Throttle Garage Sign Up Popup" />
+                        <div class="project-gallery__item-info" aria-label="Project Details" role="tabpanel">
+                            <h3>Twisted Throttle</h3>
+                            <h4>Ecommerce</h4>
+                            <hr aria-hidden="true">
+                            <p>From a site with pain points to an ecommerce and marketing powerhouse for motorcycle enthusiasts. Optimization through theme migration and plugin consolidation. New and fixed features including but not limited to: </p>
+                            <ul>
+                                <li>"My Garage" - store and access past bike searches for compatible parts and accessories. Includes prompts to bring awareness to new users </li>
+                                <li>Streamlined and optimized checkout</li>
+                                <li>Blog page layout optimized with relevant posts and products</li>
+                            </ul>
+                            <a class="btn" href="https://twistedthrottle.com/" target="_blank">Visit Site</a>
+                        </div>
+                    </div>
                     <div class="project-gallery__item" aria-label="Display Project Details" role="tab" tabindex="0">
                         <img src="assets/platinumplat-featured.jpg" class="project-gallery__slide--main" alt="Platinum Platypus Homepage" />
                         <img src="assets/platinumplat-slide1.jpg" class="project-gallery__slide" alt="Platinum Platypus Service Page Template" />
@@ -141,37 +159,30 @@
                             <a class="btn" href="https://smmadvertising.com/" target="_blank">Visit Site</a>
                         </div>
                     </div>
-                    <div class="project-gallery__item" aria-label="Display Project Details" role="tab" tabindex="0">
-                        <img src="assets/cavanaughhomes-featured.jpg" class="project-gallery__slide--main" alt="Cavanaugh Homes Homepage" />
-                        <img src="assets/cavanaughhomes-slide1.jpg" class="project-gallery__slide" alt="Cavanaugh Homes Homepage Detail" />
-                        <img src="assets/cavanaughhomes-slide2.jpg" class="project-gallery__slide" alt="Cavanaugh Homes Homepage" />
-                        <img src="assets/cavanaughhomes-slide3.jpg" class="project-gallery__slide" alt="Cavanaugh Homes Homepage Detail" />
-                        <div class="project-gallery__item-info" aria-label="Project Details" role="tabpanel">
-                            <h3>Cavanaugh Homes</h3>
-                            <h4>Real Estate</h4>
-                            <hr aria-hidden="true">
-                            <p>A startup realtor website with slide in scroll animations. Custom theme build in PHP, CSS, and jQuery. </p>
-                            <a class="btn" href="https://cavanaughhomes.com/" target="_blank">Visit Site</a>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="project-featured flex-row">
-                <div class="project-featured__wrap flex-col--half">
+                <div class="project-featured__wrap flex-col flex-col--55">
                     <div class="project-featured__images" aria-label="Project Gallery Slider">
                         <a class="gallery-ctrl btn--prev" aria-label="Show Previous Slide" role="button" tabindex="0"></a>
                         <a class="gallery-ctrl btn--next" aria-label="Show Next Slide" role="button" tabindex="0"></a>
-                        <img src="assets/platinumplat-slide1.jpg" class="project-gallery__slide active" alt="Platinum Platypus Service Page Template" />
-                        <img src="assets/platinumplat-slide2.jpg" class="project-gallery__slide" alt="Platinum Platypus Homepage" />
-                        <img src="assets/platinumplat-slide3.jpg" class="project-gallery__slide" alt="Platinum Platypus Service Page Template with Video" />
+                        <img src="assets/twistedthrottle-slide1.png" class="project-gallery__slide active" alt="Twisted Throttle Blog Post" />
+                        <img src="assets/twistedthrottle-slide2.jpg" class="project-gallery__slide" alt="Twisted Throttle Garage Widget" />
+                        <img src="assets/twistedthrottle-slide3.jpg" class="project-gallery__slide" alt="Twisted Throttle Garage Sign Up Popup" />
                     </div>
                 </div>
-                <div class="project-featured__info flex-col--half">
+                <div class="project-featured__info flex-col flex-col--45">
                     <div class="project-gallery__item-info" aria-label="Project Details" role="tabpanel">
-                        <h3>Platinum Platypus</h3>
-                        <h4>VFX and Video Marketing</h4>
+                        <h3>Twisted Throttle</h3>
+                        <h4>Ecommerce</h4>
                         <hr aria-hidden="true">
-                        <p>A sleek website that compliments their dynamic videography. Custom theme templates with PHP, SCSS, and JavaScript. </p>
+                        <p>From a site with pain points to an ecommerce and marketing powerhouse for motorcycle enthusiasts. Optimization through theme migration and plugin consolidation. New and fixed features including but not limited to: </p>
+                        <ul>
+                            <li>"My Garage" - store and access past bike searches for compatible parts and accessories. Includes prompts to bring awareness to new users </li>
+                            <li>Streamlined and optimized checkout</li>
+                            <li>Blog page layout optimized with relevant posts and products</li>
+                        </ul>
+                        <a class="btn" href="https://twistedthrottle.com/" target="_blank">Visit Site</a>
                     </div>
                 </div>
             </div>
@@ -198,7 +209,7 @@
                 </div>
             </form>
             <a href="#home" class="btn btn--back-top" aria-label="Back to Top" role="button" aria-hidden="true"><img src="assets/back-top-arrow.png" alt="back to top" /></a>
-            <p class="font-light">Heather Cavanaugh <span class="gold">&copy;2021</span></p>
+            <p class="font-light">Heather Cavanaugh <span class="gold">&copy;2022</span></p>
         </section>
         <footer>
             <script type="text/javascript" src="js/dist.js"></script>
