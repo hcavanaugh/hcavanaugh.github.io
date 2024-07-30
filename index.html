@@ -12,8 +12,23 @@
     </head>
 
     <body>
-        <section id="home" class="hero-section">
-            <svg id="svgWave" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="900" viewBox="0 0 1920 900">
+        <nav class="main-menu" role="navigation">
+            <div class="menu-container">
+                <ul id="menu" class="main-menu__items">
+                    <li><a class="main-menu__link" href="#home">About</a></li>
+                    <li><a class="main-menu__link" href="#projects">Projects</a></li>
+                    <li><a class="main-menu__link" href="#contact">Contact</a></li>
+                </ul>
+                <!-- <div class="animation-input-wrap" aria-label="Stop animation on this site" tabindex="0">
+                    <span class="toggle-label">Animation</span>
+                    <input id="animation-toggle" type="checkbox" aria-controls="animation" checked tabindex="-1">
+                    <label for="animation-toggle">Toggle Animation</label>
+                </div>  -->
+                <a class="mobile-toggle" aria-label="Open the Mobile Menu" aria-expanded="false" aria-controls="menu"><img src="assets/bars-solid.svg" aria-hidden="true" /></a>
+            </div>
+        </nav>
+        <section id="home" class="hero">
+            <!-- <svg id="svgWave" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="900" viewBox="0 0 1920 900">
                 <defs>
                 <style>
                     .wave--1, .wave--2, .wave--3, .wave--4 {
@@ -57,61 +72,92 @@
                 <path class="wave wave--3" d="M2.5,432c412-141.73,749-16.33,893,54.17,229.22,112.22,409,319.09,696,352.47,158.09,18.39,238,4.69,329-24.49l1,85.34H1.5Z"/>
                 <path class="wave wave--4" d="M1.5,509.92c381-124.66,732.62-60.2,901,8.16,241,97.85,390,313.9,677,347.28,158.09,18.39,252-11.64,343-40.81l-1,75H1.5Z"/>
                 <path class="wave wave--5" d="M.5,576.71c381-124.66,732.62-60.2,901,8.16,241,97.85,344,269.37,631,302.76,158.09,18.39,297-13.87,388-43l1,54.91H1.5Z"/>
-            </svg>
-            <div class="hero-content">
-                <h1>I Am <span>Heather Cavanaugh</span></h1>
-                <h2>Web Developer</h2>
-                <h3>New York &amp; Europe</h3>
-            </div>
-            <a class="btn--arrow-down" href="#about" aria-hidden="true"></a>
-        </section>
-        <nav class="main-menu" role="navigation">
-            <div class="menu-container">
-                <ul id="menu" class="main-menu__items">
-                    <li><a class="main-menu__link" href="#home">Home</a></li>
-                    <li><a class="main-menu__link" href="#about">About</a></li>
-                    <li><a class="main-menu__link" href="#projects">Projects</a></li>
-                    <li><a class="main-menu__link" href="#contact">Contact</a></li>
-                </ul>
-                <div class="animation-input-wrap" aria-label="Stop animation on this site" tabindex="0">
-                    <span class="toggle-label">Animation</span>
-                    <input id="animation-toggle" type="checkbox" aria-controls="animation" checked tabindex="-1">
-                    <label for="animation-toggle">Toggle Animation</label>
-                </div> 
-                <a class="mobile-toggle" aria-label="Open the Mobile Menu" aria-expanded="false" aria-controls="menu"><img src="assets/bars-solid.svg" aria-hidden="true" /></a>
-            </div>
-        </nav>
-        <section id="about" class="about-section">
-            <h2 class="section-title">About</h2>
-            <div class="flex-row">
-                <div class="flex-col flex-col--half">
-                    <h4 class="text-center">Heather Cavanaugh:</h4>
-                    <p>I am a Web Developer on Long Island in New York <br> Specialize in Front End Web Development <br> Have over 5 years experience <br> Can conduct business in the European Union <br> Create websites with
-                        a focus on SEO and Marketing
-                    </p>
-                    <p class="text-center"><a href="#contact"><strong>Let's create something special</strong></a></p>
-
+            </svg> -->
+            <div class="hero__content">
+                <div class="hero__image-col-wrapper">
+                    <div class="hero__image-col">
+                        <img src="assets/profile_picture.jpg" class="hero__image" alt="Heather Cavanaugh Profile Picture" />
+                        <div class="hero__fact-pill">
+                            <div class="hero__fact"><p><span class="large-font">7</span> Years of Experience</p></div>
+                        </div>
+                        <div class="hero__fact-pill">
+                            <img src="assets/award.png" alt="Trophy with star on the cup" />
+                            <div class="hero__fact"><p>Webby Award Honoree</p></div>
+                        </div>
+                        <div class="hero__fact-pill">
+                            <img src="assets/app-development.png" alt="Trophy with star on the cup" />
+                            <div class="hero__fact"><p>Work in Education, Ecommerce, and Editorial Sectors</p></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="flex-col flex-col--half">
-                    <img src="assets/heather_cavanaugh_dev.jpg" class="profile-picture" alt="Heather Cavanaugh Profile Picture" />
+                <div class="hero__content-col">
+                    <h1>I Am <span>Heather Cavanaugh</span></h1>
+                    <h2>Web Developer</h2>
+                    <h3>New York &amp; Europe</h3>
+                    <p>Specialized in Web Development. My expertise includes headless content management applications.</p>
                     <div class="flex-row">
-                        <div class="social-icon">
-                            <a href="https://www.linkedin.com/in/heather-cavanaugh/" target="_blank"><img src="assets/linkedin-icon.png" alt="LinkedIn" /></a>
-                        </div>
-                        <div class="social-icon">
-                            <a href="http://codepen.io/hcavanaugh/" target="_blank"><img src="assets/codepen-icon.png" alt="Codepen" /></a>
-                        </div>
-                        <div class="social-icon">
-                            <a href="https://github.com/hcavanaugh" target="_blank"><img src="assets/github.png" alt="Github" /></a>
+                        <a class="btn" href="#contact"><strong>Contact Me</strong></a>
+                        <div class="flex-row">
+                            <div class="social-icon">
+                                <a href="https://www.linkedin.com/in/heather-cavanaugh/" target="_blank"><img src="assets/linkedin-icon.png" alt="LinkedIn" /></a>
+                            </div>
+                            <div class="social-icon">
+                                <a href="https://github.com/hcavanaugh" target="_blank"><img src="assets/github.png" alt="Github" /></a>
+                            </div>
+                            <div class="social-icon">
+                                <a href="http://codepen.io/hcavanaugh/" target="_blank"><img src="assets/codepen-icon.png" alt="Codepen" /></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <a class="btn--arrow-down" href="#projects" aria-hidden="true"></a>
         </section>
         <section id="projects" class="project-section">
-            <h2 class="section-title">Projects</h2>
+            <h2 class="section-title">Recent Projects</h2>
             <div class="project-gallery">
                 <div class="project-gallery__images">
+                    <div class="project-gallery__item" aria-label="Display Project Details" role="tab" tabindex="0">
+                        <img src="assets/thenation-homepage.png" class="project-gallery__slide--main" alt="The Nation Homepage" />
+                        <video class="project-gallery__slide" playsinline autoplay loop muted src="assets/thenation-homepage.mp4" alt="The Nation Homepage Recording"></video>
+                        <video class="project-gallery__slide" playsinline autoplay loop muted src="assets/thenation-menu.mp4" alt="The Nation Menu"></video>
+                        <video class="project-gallery__slide" playsinline autoplay loop muted src="assets/thenation-article.mp4" alt="The Nation Article"></video>
+                        <div class="project-gallery__item-info" aria-label="Project Details" role="tabpanel">
+                            <h3><em>The Nation</em></h3>
+                            <h4>Editorial</h4>
+                            <hr aria-hidden="true">
+                            <p>Led the development team on rebranding the long-standing publication: <em>The Nation</em>. Work was recognized as Honoree at the 2024 <em>Webby Awards:</em> Websites - News and Politics.</p>
+                            <p>Highlights:</p>
+                            <ul>
+                                <li>Converted a clunky, field-based editorial experience to a consistent and flexible block-based system</li>
+                                <li>Maintained over 100 years worth of legacy content, while upgrading existing code for the new template system</li>
+                                <li>Created an automated template system after content is entered, to keep the article creation process for the editorial team efficient yet compliant to brand guidelines</li>
+                            </ul>
+                            <a class="btn" href="https://thenation.com/" target="_blank">Visit Site</a>
+                        </div>
+                    </div>
+                    <div class="project-gallery__item" aria-label="Display Project Details" role="tab" tabindex="0">
+                        <img src="assets/maineshare.png" class="project-gallery__slide--main" alt="Maine Initiatives" />
+                        <video class="project-gallery__slide" playsinline autoplay loop muted src="assets/maineshare.mp4" alt="Maine Initiatives Grantee Filtering Recording"></video>
+                        <div class="project-gallery__item-info" aria-label="Project Details" role="tabpanel">
+                            <h3>Maine Initiatives</h3>
+                            <h4>Non-Profit</h4>
+                            <hr aria-hidden="true">
+                            <p>Added new features to a not-for-profit grant provider for local non-profits. Created a Grantee directory with multi-layer filtering in headless Next.js application</p>
+                            <a class="btn" href="https://maineintiatives.org/" target="_blank">Visit Site</a>
+                        </div>
+                    </div>
+                    <div class="project-gallery__item" aria-label="Display Project Details" role="tab" tabindex="0">
+                        <img src="assets/shanghai.png" class="project-gallery__slide--main" alt="Meet NYU Shanghai" />
+                        <video class="project-gallery__slide" playsinline autoplay loop muted src="assets/shanghai.mp4" alt="NYU Shanghai Floorplan Recording"></video>
+                        <div class="project-gallery__item-info" aria-label="Project Details" role="tabpanel">
+                            <h3>Meet NYU - Shanghai Campus Tour</h3>
+                            <h4>Education</h4>
+                            <hr aria-hidden="true">
+                            <p>A bespoke interactive tour of the NYU Shanghai's New Bund Campus building floor plan</p>
+                            <a class="btn" href="https://meet.nyu.edu/shanghai-tour/" target="_blank">Visit Site</a>
+                        </div>
+                    </div>
                     <div class="project-gallery__item" aria-label="Display Project Details" role="tab" tabindex="0">
                         <img src="assets/twistedthrottle-featured.jpg" class="project-gallery__slide--main" alt="Twisted Throttle Homepage" />
                         <img src="assets/twistedthrottle-slide1.png" class="project-gallery__slide active" alt="Twisted Throttle Blog Post" />
@@ -121,7 +167,7 @@
                             <h3>Twisted Throttle</h3>
                             <h4>Ecommerce</h4>
                             <hr aria-hidden="true">
-                            <p>From a site with pain points to an ecommerce and marketing powerhouse for motorcycle enthusiasts. Optimization through theme migration and plugin consolidation. New and fixed features including but not limited to: </p>
+                            <p>From a site with pain points to becoming an ecommerce and marketing powerhouse for motorcycle enthusiasts. Optimization through theme migration and plugin consolidation. New and fixed features including but not limited to: </p>
                             <ul>
                                 <li>"My Garage" - store and access past bike searches for compatible parts and accessories. Includes prompts to bring awareness to new users </li>
                                 <li>Streamlined and optimized checkout</li>
@@ -130,55 +176,29 @@
                             <a class="btn" href="https://twistedthrottle.com/" target="_blank">Visit Site</a>
                         </div>
                     </div>
-                    <div class="project-gallery__item" aria-label="Display Project Details" role="tab" tabindex="0">
-                        <img src="assets/platinumplat-featured.jpg" class="project-gallery__slide--main" alt="Platinum Platypus Homepage" />
-                        <img src="assets/platinumplat-slide1.jpg" class="project-gallery__slide" alt="Platinum Platypus Service Page Template" />
-                        <img src="assets/platinumplat-slide2.jpg" class="project-gallery__slide" alt="Platinum Platypus Homepage" />
-                        <img src="assets/platinumplat-slide3.jpg" class="project-gallery__slide" alt="Platinum Platypus Service Page Template with Video" />
-                        <div class="project-gallery__item-info" aria-label="Project Details" role="tabpanel">
-                            <h3>Platinum Platypus</h3>
-                            <h4>VFX and Video Marketing</h4>
-                            <hr aria-hidden="true">
-                            <p>A sleek website that compliments their dynamic videography. Custom theme templates with PHP, SCSS, and JavaScript. </p>
-                        </div>
-                    </div>
-                    <div class="project-gallery__item" aria-label="Display Project Details" role="tab" tabindex="0">
-                        <img src="assets/smmadvertising-featured.jpg" class="project-gallery__slide--main" alt="SMM Advertising Homepage" />
-                        <img src="assets/smmadvertising-slide1.jpg" class="project-gallery__slide" alt="SMM Advertising About Page" />
-                        <img src="assets/smmadvertising-slide2.jpg" class="project-gallery__slide" alt="SMM Advertising Homepage" />
-                        <img src="assets/smmadvertising-slide3.jpg" class="project-gallery__slide" alt="SMM Advertising Case Studies Page" />
-                        <div class="project-gallery__item-info" aria-label="Project Details" role="tabpanel">
-                            <h3>SMM Advertising</h3>
-                            <h4>Digital Marketing</h4>
-                            <hr aria-hidden="true">
-                            <p>A visually crisp website that includes snap scroll animations for a long-standing modern marketing company. Animated with jQuery and Javascript libraries.</p>
-                            <a class="btn" href="https://smmadvertising.com/" target="_blank">Visit Site</a>
-                        </div>
-                    </div>
                 </div>
             </div>
-            <div class="project-featured flex-row">
-                <div class="project-featured__wrap flex-col flex-col--55">
-                    <div class="project-featured__images" aria-label="Project Gallery Slider">
-                        <a class="gallery-ctrl btn--prev" aria-label="Show Previous Slide" role="button" tabindex="0"></a>
-                        <a class="gallery-ctrl btn--next" aria-label="Show Next Slide" role="button" tabindex="0"></a>
-                        <img src="assets/twistedthrottle-slide1.png" class="project-gallery__slide active" alt="Twisted Throttle Blog Post" />
-                        <img src="assets/twistedthrottle-slide2.jpg" class="project-gallery__slide" alt="Twisted Throttle Garage Widget" />
-                        <img src="assets/twistedthrottle-slide3.jpg" class="project-gallery__slide" alt="Twisted Throttle Garage Sign Up Popup" />
+            <div class="project-featured" id="featuredProject">
+                <div class="project-featured__wrap">
+                    <div class="project-featured__images" aria-label="Project Gallery">
+                        <video class="project-gallery__slide" playsinline autoplay loop muted src="assets/thenation-homepage.mp4" alt="The Nation Homepage Recording"></video>
+                        <video class="project-gallery__slide" playsinline autoplay loop muted src="assets/thenation-menu.mp4" alt="The Nation Menu"></video>
+                        <video class="project-gallery__slide" playsinline autoplay loop muted src="assets/thenation-article.mp4" alt="The Nation Article"></video>
                     </div>
-                </div>
-                <div class="project-featured__info flex-col flex-col--45">
-                    <div class="project-gallery__item-info" aria-label="Project Details" role="tabpanel">
-                        <h3>Twisted Throttle</h3>
-                        <h4>Ecommerce</h4>
-                        <hr aria-hidden="true">
-                        <p>From a site with pain points to an ecommerce and marketing powerhouse for motorcycle enthusiasts. Optimization through theme migration and plugin consolidation. New and fixed features including but not limited to: </p>
-                        <ul>
-                            <li>"My Garage" - store and access past bike searches for compatible parts and accessories. Includes prompts to bring awareness to new users </li>
-                            <li>Streamlined and optimized checkout</li>
-                            <li>Blog page layout optimized with relevant posts and products</li>
-                        </ul>
-                        <a class="btn" href="https://twistedthrottle.com/" target="_blank">Visit Site</a>
+                    <div class="project-featured__info">
+                        <div class="project-gallery__item-info" aria-label="Project Details" role="tabpanel">
+                            <h3><em>The Nation</em></h3>
+                            <h4>Editorial</h4>
+                            <hr aria-hidden="true">
+                            <p>Led the development team on rebranding the long-standing publication: <em>The Nation</em>. Work was recognized as Honoree at the 2024 <em>Webby Awards:</em> Websites - News and Politics.</p>
+                            <p>Highlights:</p>
+                            <ul>
+                                <li>Converted a clunky, field-based editorial experience to a consistent and flexible block-based system</li>
+                                <li>Maintained over 100 years worth of legacy content, while upgrading existing code for the new template system</li>
+                                <li>Created an automated template system after content is entered, to keep the article creation process for the editorial team efficient yet compliant to brand guidelines</li>
+                            </ul>
+                            <a class="btn" href="https://thenation.com/" target="_blank">Visit Site</a>
+                        </div>
                     </div>
                 </div>
             </div>

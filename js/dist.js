@@ -32,15 +32,6 @@ if (tb.matches) {
         cloneInfo = newInfo.cloneNode(true);
         featuredInfo.append(cloneInfo);
 
-        //reset variables for featured slider + height to finish this loop function
-        featuredSlides = featuredSlider.querySelectorAll('.project-gallery__slide'),
-            slideCount = featuredSlides.length,
-            currentSlide = 0,
-            slideHeight = null,
-            initialHeight = featuredSlides[0].height;
-        featuredSlider.style.height = initialHeight + 'px';
-        //set first image as active in the slider
-        featuredSlides[0].classList.add('active');
     }
     //End featured data swap functions
 
@@ -54,6 +45,11 @@ if (tb.matches) {
         }
         //add selected class to the clicked gallery thumbnail
         event.target.classList.add('selected');
+        // const featuredProject = document.querySelector('#featuredProject');
+        // if (featuredProject) {
+        //     //scroll into featuredProject section
+        //     featuredProject.scrollIntoView({ behavior: 'smooth' });
+        // }
     }
     //End gallery thumbnail functions
 
@@ -64,107 +60,6 @@ if (tb.matches) {
         galleryThumbs[i].addEventListener('keydown', (event) => { if (event.code === 'Enter') { featuredGallery(event) } });
         galleryThumbs[i].addEventListener('keydown', (event) => { if (event.code === 'Enter') { mainGallery(event) } });
     }
-
-    //Featured Slider Functions
-    //Set featured slider height and obj variables on load
-    window.addEventListener('load', function() {
-        featuredSlides = featuredSlider.querySelectorAll('.project-gallery__slide'),
-            slideCount = featuredSlides.length,
-            currentSlide = 0,
-            slideHeight = null,
-            initialHeight = featuredSlides[0].clientHeight;
-        featuredSlider.style.height = initialHeight + 'px';
-    });
-
-    //Slider resize height function
-    function galleryNavigation(n) {
-        featuredSlides[currentSlide].className = 'project-gallery__slide';
-        currentSlide = (n + slideCount) % slideCount;
-        featuredSlides[currentSlide].className = 'project-gallery__slide active';
-        slideHeight = featuredSlides[currentSlide].clientHeight;
-        featuredSlider.style.height = slideHeight + 'px';
-
-        //resize featured slider height to image
-        window.addEventListener('resize', function() {
-            resizedSlideHeight = featuredSlides[currentSlide].clientHeight;
-            featuredSlider.style.height = resizedSlideHeight + 'px';
-        });
-    }
-    //Slider arrow navigation functions
-    function nextSlide(e) {
-        galleryNavigation(currentSlide + 1);
-        let code = e.keyCode;
-        //allow keyboard navigation
-        if (code == 39) {
-            galleryNavigation(currentSlide + 1);
-        }
-    };
-
-    function prevSlide(e) {
-        galleryNavigation(currentSlide + -1);
-        let code = e.keyCode;
-        //allow keyboard navigation
-        if (code == 37) {
-            galleryNavigation(currentSlide + -1);
-        }
-    };
-
-    //Establish slider navigation event listeners
-    const slideHandlers = {
-        nextSlide: function(element) {
-            document.querySelector(element).addEventListener('click', nextSlide);
-            //change slide on keystroke
-            document.body.addEventListener('keydown', nextSlide, false);
-        },
-        prevSlide: function(element) {
-            document.querySelector(element).addEventListener('click', prevSlide);
-            //change slide on keystroke
-            document.body.addEventListener('keydown', prevSlide, false);
-        }
-    }
-
-    //Establish objects for navigation function + event listener
-    slideHandlers.nextSlide('.btn--next');
-    slideHandlers.prevSlide('.btn--prev');
-
-
-    // Detect swipe events for tablet touch devices, credit to Kirupa @ https://www.kirupa.com/html5/detecting_touch_swipe_gestures.htm
-    let initialX = null;
-    let initialY = null;
-
-    function startTouch(e) {
-        initialX = e.touches[0].clientX;
-        initialY = e.touches[0].clientY;
-    };
-
-    function moveTouch(e) {
-        if (initialX === null) {
-            return;
-        }
-        if (initialY === null) {
-            return;
-        }
-        let currentX = e.touches[0].clientX;
-        let currentY = e.touches[0].clientY;
-        let diffX = initialX - currentX;
-        let diffY = initialY - currentY;
-        if (Math.abs(diffX) > Math.abs(diffY)) {
-            if (diffX > 0) {
-                // swiped left
-                galleryNavigation(currentSlide + 1);
-            } else {
-                // swiped right
-                galleryNavigation(currentSlide + -1);
-            }
-        }
-        initialX = null;
-        initialY = null;
-        e.preventDefault();
-    };
-
-    //Event listeners for swipe slider function
-    featuredSlider.addEventListener('touchstart', startTouch, false);
-    featuredSlider.addEventListener('touchmove', moveTouch, false);
 
 } //End featured slider functions
 
@@ -198,20 +93,20 @@ for (let i = 0; i < menuItem.length; i++) {
 
 //Animation toggle
 
-const animationToggle = document.querySelector('#animation-toggle');
-const toggleContainer = document.querySelector('.animation-input-wrap');
-const heroSection = document.querySelector('.hero-section');
-animationToggle.addEventListener('click', toggleAnimation);
-toggleContainer.addEventListener('keydown',  (event) => { if (event.code === 'Enter') { toggleAnimation(); } });
+// const animationToggle = document.querySelector('#animation-toggle');
+// const toggleContainer = document.querySelector('.animation-input-wrap');
+// const heroSection = document.querySelector('.hero');
+// animationToggle.addEventListener('click', toggleAnimation);
+// toggleContainer.addEventListener('keydown',  (event) => { if (event.code === 'Enter') { toggleAnimation(); } });
 
-function toggleAnimation() {
-    animationToggle.toggleAttribute("checked");
-    if(animationToggle.hasAttribute('checked')) {
-        heroSection.classList.remove('stop-animation');
-    } else {
-        heroSection.classList.add('stop-animation');
-    }
-}
+// function toggleAnimation() {
+//     animationToggle.toggleAttribute("checked");
+//     if(animationToggle.hasAttribute('checked')) {
+//         heroSection.classList.remove('stop-animation');
+//     } else {
+//         heroSection.classList.add('stop-animation');
+//     }
+// }
 
 //Contact Form AJAX submission script
 
