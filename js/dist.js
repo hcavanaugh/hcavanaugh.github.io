@@ -1,6 +1,6 @@
 ///Javascript Functions for cavanaugh.dev
 ///Author: Heather Cavanaugh (unless otherwise noted)
-///Notes: Built in Javascript (vanilla). Wanted to challenge myself to build without relying on jQuery or javascript libraries.
+///Notes: Built in Javascript (vanilla) and the GSAP library for interactions.
 
 //Fire for tablet and desktop sessions:
 const tb = window.matchMedia('(min-width: 768px)');
@@ -157,3 +157,98 @@ function ajax(method, url, data, success, error) {
     };
     xhr.send(data);
 } //End Contact Form AJAX submission script
+
+// HERO SECTION ANIMATION
+
+// Get hero section
+const heroSection = document.querySelector('.hero');
+
+// Get profile picture fact pills to animation
+const pointers = document.querySelectorAll('.hero__fact-pill');
+
+// Set the current position of the pointer
+let xPosition;
+let yPosition;
+
+// Store the last position of the pointer
+let storedXPosition;
+let storedYPosition;
+
+let mapWidth;
+let mapHeight;
+
+function movePointer() {
+    // Only recalculate if the values change
+    if (storedXPosition === xPosition && storedYPosition === yPosition) return;
+    pointers.forEach(pointer => {
+        gsap.to(pointer, {
+            xPercent: xPosition,
+            yPercent: yPosition,
+            ease: 'none',
+        })
+    });
+    // update the stored positions with the current positions
+    storedXPosition = xPosition;
+    storedYPosition = yPosition;
+}
+
+// Updating the mouse coordinates
+function updateMouseCoordinates(event) {
+    xPosition = mapWidth(event.clientX);
+    yPosition = mapHeight(event.clientY);
+}
+
+const heroPillsAnimation = () => {
+    const animationAllowed = window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
+    // If animation is disabled or the user is on mobile, bail
+    if (!animationAllowed) return;
+
+    function setMaps() {
+        mapWidth = gsap.utils.mapRange(0, 350, -25, -20);
+        mapHeight = gsap.utils.mapRange(0, 500, -25, -20);
+    }
+    window.addEventListener('resize', setMaps);
+    setMaps();
+
+    gsap.ticker.add(movePointer);
+
+    heroSection.addEventListener("mousemove", updateMouseCoordinates);
+}
+
+document.addEventListener("DOMContentLoaded", (event) => {
+    let animationRunning = false;
+
+    // Function to reset animations and styles
+    const resetAnimations = () => {
+        gsap.ticker.remove(movePointer);
+        heroSection.removeEventListener("mousemove", updateMouseCoordinates);
+        pointers.forEach(pointer => {
+            gsap.killTweensOf(pointer);
+            pointer.style.transform = '';
+            pointer.style.opacity = '';
+            pointer.style.transition = '';
+            pointer.style.animation = '';
+            pointer.style.left = '';
+            pointer.style.top = '';
+            pointer.style.right = '';
+            pointer.style.bottom = '';
+        });
+    };
+
+    const runAnimation = () => {
+        if (window.matchMedia('(max-width: 574px)').matches) {
+            if (animationRunning) {
+                resetAnimations();
+                animationRunning = false;
+            }
+        } else {
+            if (!animationRunning) {
+                heroPillsAnimation();
+                animationRunning = true;
+            }
+        }
+    };
+    
+    window.addEventListener('resize', runAnimation);
+    runAnimation();
+}); // END HERO SECTION ANIMATION
