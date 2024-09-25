@@ -293,12 +293,12 @@
             background: linear-gradient(340deg, color('gold') 0%, color('light-gold') 100%);
             color: color('dark-purple');
             padding: .75rem;
-            max-width: 140px;
             font-weight: 600;
             @media screen and (min-width: 575px) {
                 position: absolute;
                 top: 0;
                 left: 0;
+                max-width: 140px;
                 &:nth-of-type(1) {
                     transform: translate(-25%, 515%);
                     p {
@@ -566,10 +566,14 @@
                         transition: all 500ms ease-in-out;
                         opacity: 0.5;
                     }
+                    &:hover, .selected {
+                        img {
+                            opacity: 1;
+                        } 
+                    }
                     &.selected img {
                         transform: scale(1.1);
                         z-index: 2;
-                        opacity: 1;
                     }
                 }
                 @media screen and (max-width: 767px) {
@@ -577,6 +581,12 @@
                     padding-bottom: 1rem;
                     flex: 1 1 100%;
                     cursor: default;
+                    &:last-of-type {
+                        padding-bottom: 0;
+                        .project-gallery__item-info {
+                            padding-bottom: 0;
+                        }
+                    }
                 }
                 .project-gallery__item-info {
                     display: none;
@@ -603,6 +613,25 @@
                     margin: 0 auto;
                     display: block;
                 }
+            }
+        }
+        .project-gallery__item-info {
+            h3 {
+                font-weight: 600;
+                color: color('dark-purple');
+            }
+            h4 {
+                font-weight: 400;
+                color: color('grey');
+            }
+            ul {
+                text-align: left;
+                margin-bottom: 0;
+            }
+            .btn {
+                display: block;
+                margin: 1.5rem auto 0;
+                width: fit-content;
             }
         }
         .project-featured {
@@ -635,26 +664,14 @@
                 }
             }
             &__info {
-                .project-gallery__item-info {
-                    position: sticky;
-                    top: 100px;
-                }
                 @media screen and (max-width: 992px) {
                     text-align: center;
                     padding: 2rem 0 4rem;
                     order: 1;
                 }
-                h3 {
-                    font-weight: 600;
-                    color: color('dark-purple');
-                }
-                h4 {
-                    font-weight: 400;
-                    color: color('grey');
-                }
-                ul {
-                    padding-bottom: 1rem;
-                    text-align: left;
+                .project-gallery__item-info {
+                    position: sticky;
+                    top: 100px;
                 }
             }
         }

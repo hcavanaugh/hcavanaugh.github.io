@@ -426,7 +426,6 @@ button {
   background: linear-gradient(340deg, #D0AE55 0%, #E9D3A6 100%);
   color: #3B284A;
   padding: 0.75rem;
-  max-width: 140px;
   font-weight: 600;
 }
 @media screen and (min-width: 575px) {
@@ -434,6 +433,7 @@ button {
     position: absolute;
     top: 0;
     left: 0;
+    max-width: 140px;
   }
   .hero__fact-pill:nth-of-type(1) {
     -webkit-transform: translate(-25%, 515%);
@@ -811,11 +811,13 @@ nav.main-menu #animation-toggle:checked + label::after {
     transition: all 500ms ease-in-out;
     opacity: 0.5;
   }
+  .project-section .project-gallery__item:hover img, .project-section .project-gallery__item .selected img {
+    opacity: 1;
+  }
   .project-section .project-gallery__item.selected img {
     -webkit-transform: scale(1.1);
             transform: scale(1.1);
     z-index: 2;
-    opacity: 1;
   }
 }
 @media screen and (max-width: 767px) {
@@ -826,6 +828,12 @@ nav.main-menu #animation-toggle:checked + label::after {
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
     cursor: default;
+  }
+  .project-section .project-gallery__item:last-of-type {
+    padding-bottom: 0;
+  }
+  .project-section .project-gallery__item:last-of-type .project-gallery__item-info {
+    padding-bottom: 0;
   }
 }
 .project-section .project-gallery__item .project-gallery__item-info {
@@ -854,6 +862,25 @@ nav.main-menu #animation-toggle:checked + label::after {
   max-width: 100%;
   margin: 0 auto;
   display: block;
+}
+.project-section .project-gallery__item-info h3 {
+  font-weight: 600;
+  color: #3B284A;
+}
+.project-section .project-gallery__item-info h4 {
+  font-weight: 400;
+  color: #555555;
+}
+.project-section .project-gallery__item-info ul {
+  text-align: left;
+  margin-bottom: 0;
+}
+.project-section .project-gallery__item-info .btn {
+  display: block;
+  margin: 1.5rem auto 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .project-section .project-featured {
   padding: 5rem 0 3rem;
@@ -893,10 +920,6 @@ nav.main-menu #animation-toggle:checked + label::after {
             order: 2;
   }
 }
-.project-section .project-featured__info .project-gallery__item-info {
-  position: sticky;
-  top: 100px;
-}
 @media screen and (max-width: 992px) {
   .project-section .project-featured__info {
     text-align: center;
@@ -906,17 +929,9 @@ nav.main-menu #animation-toggle:checked + label::after {
             order: 1;
   }
 }
-.project-section .project-featured__info h3 {
-  font-weight: 600;
-  color: #3B284A;
-}
-.project-section .project-featured__info h4 {
-  font-weight: 400;
-  color: #555555;
-}
-.project-section .project-featured__info ul {
-  padding-bottom: 1rem;
-  text-align: left;
+.project-section .project-featured__info .project-gallery__item-info {
+  position: sticky;
+  top: 100px;
 }
 
 .contact-section {
