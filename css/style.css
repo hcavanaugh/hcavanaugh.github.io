@@ -811,7 +811,7 @@ nav.main-menu #animation-toggle:checked + label::after {
     transition: all 500ms ease-in-out;
     opacity: 0.5;
   }
-  .project-section .project-gallery__item:hover img, .project-section .project-gallery__item .selected img {
+  .project-section .project-gallery__item:hover img, .project-section .project-gallery__item.selected img {
     opacity: 1;
   }
   .project-section .project-gallery__item.selected img {

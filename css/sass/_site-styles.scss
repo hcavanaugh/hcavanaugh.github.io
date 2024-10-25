@@ -566,7 +566,7 @@
                         transition: all 500ms ease-in-out;
                         opacity: 0.5;
                     }
-                    &:hover, .selected {
+                    &:hover, &.selected {
                         img {
                             opacity: 1;
                         } 
